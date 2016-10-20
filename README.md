@@ -1,6 +1,6 @@
 # Gulp-Frontend-Start  
 
-**Help a front-end-developer do better**  
+**Help a front-end-developer do better and construct his/her code**  
 
 ## QUICK START
 
@@ -56,13 +56,13 @@ $ gulp minify-js
 ```
 
 
-concate **js** or **css** file to one file ,  reduce request
+concate all lib **js** or **css** file to one file ,  reduce request
 ```
 $ gulp concate-css
 $ gulp concate-js
 ```
 
-compress img ( It's usually use on the final in your project)
+compress img ( It's usually use on final in your project)
 ```
 $ gulp image
 ```
@@ -107,6 +107,26 @@ A **build file** to control hbs transforming.
 
 ### ./route.js
 control the data to transform hbs's template
+- data : hbs's data
+- partials : partial.js
+- layout : input file
+- filename : output file   
+
+```
+var route = [
+{
+  data: {
+	path: './',
+	title: 'Hello guys',
+	first_word: 'It is a good template'
+  },
+  partials: './partial.js',
+  layout:  "./layout/index.hbs", 
+  filename: "./index.html" 
+}
+];
+module.exports = route;
+```
 
 ### ./partial.js
 **partial hbs** &nbsp;&nbsp;&nbsp;&nbsp;ex: {{> head}}
